@@ -40,9 +40,13 @@ Befire we build the container, set up the Docker Buildx Builder:
     ```
 
 Next, build the docker image using the Dockerfile. _**Run from the directory with the Dockerfile**_
-`docker buildx build --platform linux/amd64 -t ultsx86_64:24.04 .`
+```bash
+docker buildx build --platform linux/amd64 -t ultsx86_64:24.04 .
+```
 
 Now, run an interactive shell from the container and move all files from current host machine directory to `/workspace` in the container:
-`docker run --platform linux/amd64 -it -v ./home:/workspace ultsx86_64:24.04 bash`
+```bash
+docker run --platform linux/amd64 -it -v ./home:/workspace ultsx86_64:24.04 bash
+```
 
 (The `-v ./home:/workspace` part mounts current `./home` subdirectory of your host machine into `/workspace` inside the container)
