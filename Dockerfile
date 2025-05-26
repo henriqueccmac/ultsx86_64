@@ -31,8 +31,6 @@ RUN apt update && \
     git && \
     rm -rf /var/lib/apt/lists/*
 
-# Set colors
-RUN echo 'force_color_prompt=yes' >> /root/.bashrc 
-
 # Set the default command when the container starts (opens a bash shell)
 CMD ["bash"]
+
