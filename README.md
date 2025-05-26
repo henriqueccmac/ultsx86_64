@@ -4,22 +4,27 @@ This is an x86_64 environment with Ubuntu LTS 24.04.
 
 
 First, install **colima** and **docker**:
-```brew install colima```
-```brew install docker```
-
+```bash
+brew install colima
+```
+```bash
+brew install docker
+```
 
 Also install the **buildx** plugin for docker:
-```brew install docker-buildx```
-
+```bash
+brew install docker-buildx
+```
 
 And then run:
-```colima start --vm-type=vz --arch aarch64 --cpu 2 --memory 1 --mount-type=virtiofs --edit```
+```bash
+colima start --vm-type=vz --arch aarch64 --cpu 2 --memory 1 --mount-type=virtiofs --edit
+```
 
+**NB**: Make sure the 'rosetta' option is set to true to enable it to emulate x86_64 with Rosetta2 when necessary.
 
-**NB**: make sure the 'rosetta' option is set to true to enable it to emulate x86_64 with Rosetta2 when necessary.
 This will start a lightweight colima aarch64 linux VM with Apple's native virtualization for the Docker Engine/Daemon to run on. It uses Lima as a backend.
 Modify cpu and memory to accomodate your needs. The integer values specify GiB. Virtiofs is the default `vz` io type.
-
 
 Befire we build the container, set up the Docker Buildx Builder:
 
