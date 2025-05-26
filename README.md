@@ -1,3 +1,18 @@
+### Running the container
+
+To access the container via an interactive shell
+simply run:
+```bash
+./run
+```
+
+Which executes the `docker run` command:
+```bash
+docker run --platform linux/amd64 -it -v ./home:/workspace ultsx86_64:24.04 bash
+```
+
+(`-v ./home:/workspace` part mounts `./home` of your host machine into `/workspace` inside the container.)
+
 ### Installation
 
 This is an x86_64 environment with Ubuntu LTS 24.04.
@@ -49,4 +64,4 @@ Now, run an interactive shell from the container and move all files from current
 docker run --platform linux/amd64 -it -v ./home:/workspace ultsx86_64:24.04 bash
 ```
 
-(The `-v ./home:/workspace` part mounts current `./home` subdirectory of your host machine into `/workspace` inside the container)
+(`-v ./home:/workspace` part mounts `./home` of your host machine into `/workspace` inside the container.)
