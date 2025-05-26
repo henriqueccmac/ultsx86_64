@@ -1,0 +1,2 @@
+#!/bin/zsh
+docker run --platform linux/amd64 -it -v ./home:/workspace ultsx86_64:24.04 bash
